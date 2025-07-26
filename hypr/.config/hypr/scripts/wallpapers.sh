@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WALLPAPER_DIR="${HOME}/.config/hypr/wallpapers"
+WALLPAPER_DIR="${HOME}/wallpapers"
 TRANSITION_TYPE="grow"
 TRANSITION_DURATION="0.25"
 
