@@ -1,7 +1,7 @@
 - name: symlink dotfiles
   command: "stow {{ item }} -t /home/{{ ansible_user }}"
   args:
-    chdir: "/home/{{ ansible_user }}/dotfile_source/.stow-targets"
+    chdir: "/home/{{ ansible_user }}/dotfile_source/.stow-targets/.config"
   loop:
     - btop
     - hypr
