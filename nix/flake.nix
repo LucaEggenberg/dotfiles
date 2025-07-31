@@ -8,16 +8,16 @@
     outputs = { self, nixpkgs, ... }: {
         homeManagerModules.dotfiles = { pkgs, ... }:
         let
-            dotfile-dir = "${self}/.stow-targets/.config";
+            dotfile-dir = "${self}/.stow-targets";
         in {
             home.file = {
-                ".config/btop".source = "${dotfile-dir}/btop";
-                ".config/hypr".source = "${dotfile-dir}/hypr";
-                ".config/kitty".source = "${dotfile-dir}/kitty";
-                ".config/mako".source = "${dotfile-dir}/mako";
-                ".config/waybar".source = "${dotfile-dir}/waybar";
-                ".config/wlogout".source = "${dotfile-dir}/wlogout";
-                ".config/wofi".source = "${dotfile-dir}/wofi";
+                ".config/btop".source = "${dotfile-dir}/.config/btop";
+                ".config/hypr".source = "${dotfile-dir}/.config/hypr";
+                ".config/kitty".source = "${dotfile-dir}/.config/kitty";
+                ".config/mako".source = "${dotfile-dir}/.config/mako";
+                ".config/waybar".source = "${dotfile-dir}/.config/waybar";
+                ".config/wlogout".source = "${dotfile-dir}/.config/wlogout";
+                ".config/wofi".source = "${dotfile-dir}/.config/wofi";
             };
         };
     };
