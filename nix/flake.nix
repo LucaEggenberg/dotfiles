@@ -8,13 +8,16 @@
     outputs = { self, nixpkgs, ... }: {
         homeManagerModules.dotfiles = { pkgs, ... }:
         let
-            dotfile-dir = "${self}/.stow-targets";
+            dotfile-dir = builtins.path { path = "${self}/.stow-targets/.config"; };
         in {
             home.file = {
-                ".config" = {
-                    source = "${dotfile-dir}/.config";
-                    recursive = true;
-                };
+                ".config/btop".source = "${dotfile-dir}/btop";
+                ".config/hypr".source = "${dotfile-dir}/hypr";
+                ".config/kitty".source = "${dotfile-dir}/kitty";
+                ".config/mako".source = "${dotfile-dir}/mako";
+                ".config/waybar".source = "${dotfile-dir}/waybar";
+                ".config/wlogout".source = "${dotfile-dir}/wlogout";
+                ".config/wofi".source = "${dotfile-dir}/wofi";
             };
         };
     };
