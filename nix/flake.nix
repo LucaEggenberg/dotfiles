@@ -6,9 +6,9 @@
     };
 
     outputs = { self, nixpkgs, ... }: {
-        homeManagerModules.dotfiles = { config, pkgs, ... }:
+        homeManagerModules.dotfiles = { pkgs, ... }:
         let
-            dotfile-dir = "${self}/.stow-targets";
+            dotfile-dir = "${self}/.stow-targets/.config";
         in {
             home.file = {
                 ".config/btop".source = "${dotfile-dir}/btop";
