@@ -2,7 +2,7 @@
     description = "flake for managing my dotfiles with home-manager";
 
     inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     };
 
     outputs = { self, nixpkgs, ... }: {
