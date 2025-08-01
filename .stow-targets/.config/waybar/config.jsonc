@@ -20,11 +20,9 @@
         "pulseaudio",
         "custom/power"
     ],
-    "custom/logo": {
-        "format": "  ",
-        "tooltip": false,
-        "on-click": "wofi --show drun &"
-    },
+    "include": [
+        "logo.jsonc"
+    ],
     "custom/power": {
         "format": "⏻ ",
         "tooltip": "Power Menu",
