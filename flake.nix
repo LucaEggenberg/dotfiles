@@ -6,7 +6,7 @@
     };
 
     outputs = { self, nixpkgs, ... }: {
-        homeManagerModules.dotfiles = { pkgs, ... }:
+        homeModules.dotfiles = { pkgs, ... }:
         let
             dotfile-dir = builtins.path { path = "${self}/.stow-targets/.config"; };
         in {
