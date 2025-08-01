@@ -9,6 +9,12 @@
         homeModules.dotfiles = { pkgs, ... }:
         let
             dotfile-dir = builtins.path { path = "${self}/.stow-targets/.config"; };
+
+            waybarDir = pkgs.runCommand "waybar-config" { } ''
+                mkdir -p $out
+                cp -r ${dotfile-dir}/waybar/* $out
+                cp ${dotfile-dir}/waybar/nix/logo.jsonc $out/logo.jsonc
+            '';
         in {
             home.file = {
                 ".config/btop".source = "${dotfile-dir}/btop";
@@ -17,11 +23,7 @@
                 ".config/mako".source = "${dotfile-dir}/mako";
                 ".config/wlogout".source = "${dotfile-dir}/wlogout";
                 ".config/wofi".source = "${dotfile-dir}/wofi";
-
-                ".config/waybar/colors.css".source = "${dotfile-dir}/waybar/colors.css";
-                ".config/waybar/config.jsonc".source = "${dotfile-dir}/waybar/config.jsonc";
-                ".config/waybar/logo.jsonc".source = "${dotfile-dir}/waybar/nix/logo.jsonc";
-                ".config/waybar/style.css".source = "${dotfile-dir}/waybar/style.css";
+                ".config/waybar".source = waybarDir;
             };
         };
     };
