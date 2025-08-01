@@ -9,15 +9,21 @@
         homeModules.dotfiles = { pkgs, ... }:
         let
             dotfile-dir = builtins.path { path = "${self}/.stow-targets/.config"; };
+
+            waybarConfig = builtins.readFile "${dotfile-dir}/waybar/config.jsonc";
+            newWaybarConfig = pkgs.lib.replaceStrings [ "  " ] [ "  " ] waybarConfig;
         in {
             home.file = {
                 ".config/btop".source = "${dotfile-dir}/btop";
                 ".config/hypr".source = "${dotfile-dir}/hypr";
                 ".config/kitty".source = "${dotfile-dir}/kitty";
                 ".config/mako".source = "${dotfile-dir}/mako";
-                ".config/waybar".source = "${dotfile-dir}/waybar";
                 ".config/wlogout".source = "${dotfile-dir}/wlogout";
                 ".config/wofi".source = "${dotfile-dir}/wofi";
+
+                ".config/waybar/colors.css".source = "${dotfile-dir}/waybar/colors.css";
+                ".config/waybar/style.css".source = "${dotfile-dir}/waybar/style.css";
+                ".config/waybar/config.jsonc".text = newWaybarConfig;
             };
         };
     };
