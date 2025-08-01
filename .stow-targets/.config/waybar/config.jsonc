@@ -1,4 +1,4 @@
-{
+{ 
     "layer": "top",
     "position": "top",
     "spacing": 0,
@@ -6,6 +6,9 @@
     "margin-left": 10,
     "margin-right": 10,
     "margin-top": 5,
+    "include": [
+        "$HOME/.config/waybar/logo.jsonc"
+    ],
     "modules-left": [
         "custom/logo",
         "hyprland/workspaces"
@@ -19,9 +22,6 @@
         "temperature",
         "pulseaudio",
         "custom/power"
-    ],
-    "include": [
-        "logo.jsonc"
     ],
     "custom/power": {
         "format": "⏻ ",
