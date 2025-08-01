@@ -12,7 +12,9 @@
 
             waybarDir = pkgs.runCommand "waybar-config" { } ''
                 mkdir -p $out
-                cp -r ${dotfile-dir}/waybar/* $out
+                cp ${dotfile-dir}/waybar/colors.css $out/colors.css
+                cp ${dotfile-dir}/waybar/config.jsonc $out/config.jsonc
+                cp ${dotfile-dir}/waybar/style.css $out/style.css
                 cp ${dotfile-dir}/waybar/nix/logo.jsonc $out/logo.jsonc
             '';
         in {
