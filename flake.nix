@@ -20,7 +20,7 @@
                 ".config/mako".source = "${dotfile-dir}/mako";
                 ".config/wlogout".source = "${dotfile-dir}/wlogout";
                 ".config/wofi".source = "${dotfile-dir}/wofi";
-                ".config/waybar/colors.css".source = "${dotfile-dir}/waybar/colors.css"
+                ".config/waybar/colors.css".source = "${dotfile-dir}/waybar/colors.css";
             };
 
             programs.waybar = {
