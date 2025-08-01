@@ -20,10 +20,15 @@
                 ".config/mako".source = "${dotfile-dir}/mako";
                 ".config/wlogout".source = "${dotfile-dir}/wlogout";
                 ".config/wofi".source = "${dotfile-dir}/wofi";
+            };
 
-                ".config/waybar/colors.css".source = "${dotfile-dir}/waybar/colors.css";
-                ".config/waybar/style.css".source = "${dotfile-dir}/waybar/style.css";
-                ".config/waybar/config.jsonc".text = newWaybarConfig;
+            programs.waybar = {
+                enable = true;
+
+                settings = newWaybarConfig;
+
+                style = builtins.readFile ("${dotfile-dir}/waybar/style.css");
+                colors = builtins.readFile ("${dotfile-dir}/waybar/style.css");
             };
         };
     };
