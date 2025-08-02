@@ -1,5 +1,0 @@
-- name: deploy dotfiles with stow
-  gather_facts: false
-  become: false
-  roles:
-    - role: dotfiles
