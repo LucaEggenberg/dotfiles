@@ -17,20 +17,14 @@
                 cp ${dotfile-dir}/waybar/style.css $out/style.css
                 cp ${dotfile-dir}/waybar/nix/logo.jsonc $out/logo.jsonc
             '';
-
-            dotFiles = pkgs.runCommand "dotfiles" { } ''
-                mkdir -p $out
-                cp -r ${dotfile-dir} $out
-                find $out -type f -name "*.sh" -exec chmod +x {} +
-            '';
         in {
             home.file = {
-                ".config/btop".source = "${dotFiles}/btop";
-                ".config/hypr".source = "${dotFiles}/hypr";
-                ".config/kitty".source = "${dotFiles}/kitty";
-                ".config/mako".source = "${dotFiles}/mako";
-                ".config/wlogout".source = "${dotFiles}/wlogout";
-                ".config/wofi".source = "${dotFiles}/wofi";
+                ".config/btop".source = "${dotfile-dir}/btop";
+                ".config/hypr".source = "${dotfile-dir}/hypr";
+                ".config/kitty".source = "${dotfile-dir}/kitty";
+                ".config/mako".source = "${dotfile-dir}/mako";
+                ".config/wlogout".source = "${dotfile-dir}/wlogout";
+                ".config/wofi".source = "${dotfile-dir}/wofi";
                 ".config/waybar".source = waybarDir;
             };
         };
