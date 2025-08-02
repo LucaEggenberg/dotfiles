@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 WALLPAPER_DIR="${HOME}/wallpapers"
 TRANSITION_TYPE="grow"
